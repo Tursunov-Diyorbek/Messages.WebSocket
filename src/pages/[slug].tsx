@@ -3,7 +3,7 @@ import Home from "./index"
  
 export default function userChats() {
   const router = useRouter()
-  const userId = router.query.slug
+  const _id = router.query.slug
   
-  return <Home userId={userId}/>
+  return <Home _id={_id}/>
 }

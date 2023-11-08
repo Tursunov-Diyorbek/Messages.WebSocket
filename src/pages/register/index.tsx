@@ -3,7 +3,7 @@ import Head from 'next/head';
 import styles from "./index.module.sass";
 import { useState } from "react";
 import axios from "axios";
-
+import { baseUrl } from "../index";
 
 export default function Register() {
     const [username, setUsername] = useState<string>("")
@@ -13,13 +13,12 @@ export default function Register() {
 
     const onSubmit = async () => {
         try{
-            let res = await axios.post("http://192.168.1.43:5000/user/register", {
+            let res = await axios.post(`${baseUrl}user/register`, {
                 username: username,
                 password: password
             })
             localStorage.setItem("userData", JSON.stringify(res.data.data))
-            localStorage.setItem("userToken", res.data.token) 
-            
+            localStorage.setItem("userToken", res.data.token)  
             router.push("/")
         }
         catch(e){console.log(e)}

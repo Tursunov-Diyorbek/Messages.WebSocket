@@ -6,6 +6,14 @@
     height: 100vh
     color: #fff
     overflow-y: scroll
+    position: relative
+    &__userinfo
+        position: sticky
+        top: 0
+        background-color: blue
+        text-align: center
+    h1
+        padding: 5px
     button
         background-color: red
         color: #fff
@@ -13,8 +21,7 @@
         padding: 10px
         border: none
         cursor: pointer
-        position: sticky
-        top: 0
+        border-radius: 5px
 .userName
     padding: 10px
     cursor: pointer
@@ -25,10 +32,6 @@
         border-radius: 5px
 .userChats
     width: 100%
-    // display: flex
-    // flex-direction: column
-    // justify-content: space-between
-    // height: 100vh
     h1
         padding: 10px
         text-align: center
@@ -52,22 +55,29 @@
         padding: 8px
         border-radius: 5px
         font-weight: bold
-.messages
-    height: calc(100vh - 128px)
+.messagesUser
     display: flex
     flex-direction: column
     justify-content: flex-end
+    height: calc(100vh - 128px)
+.messages
+    // display: flex
+    // flex-direction: column
+    // justify-content: flex-end
+    overflow-y: scroll
     &__chats
         display: flex
         justify-content: space-between
-        // align-items: center
     &__left
         background-color: blue !important
         color: #fff
         padding: 5px
         margin: 0px 20px
-        margin-bottom: 20px
+        margin-top: 20px
         border-radius: 10px 10px 10px 0px
+        display: flex
+        justify-content: space-between
+        align-items: flex-end
     &__right
         background-color: blue !important
         padding: 5px
@@ -75,3 +85,17 @@
         border-radius: 10px 10px 0px 10px
         margin-top: 20px
         color: #fff
+        display: flex
+        justify-content: space-between
+        align-items: flex-end
+.group
+    position: absolute
+    background-color: aqua
+    width: 50px
+    height: 50px
+    border-radius: 50%
+    cursor: pointer
+    bottom: 1%
+    left: 1%
+    border: none
+    border: 1px solid #141414
